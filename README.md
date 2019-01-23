@@ -6,6 +6,7 @@ identifyOfftargetSites_1.py has its mismatches evaluation between the sgRNA temp
 
 visulization_SA_pdfout.py is changed to allow the display of the nucleotide "R" in the off-target panel and generate a pdf file for the figure in addition to the .svg format.  
 
+## Additional codes
 2018_06_20_Amp_analysis.py is a in-house script used for analysing editing efficiency of SaCas9 from the amplicon ssequencing data. 
 
 2019_01_10_characterize_indel_type.py characterize per base insertion/deletion consequential of Cas9 cleaveage and repair of the VEGFA_8 target site.
