@@ -49,14 +49,20 @@ def visualizeOfftargets(infile, outfile, title=None):
         # Define top and left margins
         x_offset = 20
         y_offset = 20
+# Draw ticks
+    tick_locations = range(1, len(ref_seq) -5, 2)
+    tick_locations.sort()
 
-    # Draw ticks
-    tick_locations = [1, len(ref_seq)]
-    tick_locations += range(len(ref_seq) + 1)[::10][1:]
-    for x in tick_locations:
-        dwg.add(dwg.text(str(x), insert=(x_offset + (x - 1) * box_size + 2, y_offset - 2), style="font-size:10px; font-family:Courier"))
+### odd no vs even no
+    if len(ref_seq) %2==1:
+        for x, y in zip(tick_locations[::-1], tick_locations):
+            dwg.add(dwg.text(str(x), insert=(x_offset + (y - 1) * box_size + 2, y_offset - 2), style="font-size:10px; font-family:Courier"))
+    else:
+        for x, y in zip(tick_locations[::-1], tick_locations):
+            dwg.add(dwg.text(str(x), insert=(x_offset + y * box_size + 2, y_offset - 2), style="font-size:10px; font-family:Courier"))
 
-    # Draw reference sequence row
+	
+# Draw reference sequence row
     for i, c in enumerate(ref_seq):
 	print (i, c)
         y = y_offset
